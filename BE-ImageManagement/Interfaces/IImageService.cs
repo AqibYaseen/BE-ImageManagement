@@ -6,6 +6,9 @@ namespace BE_ImageManagement.Interfaces;
 public interface IImageService
 {
 
-    Task<ApiResponse<IEnumerable<ImageResponse>>> GetImages();
-    Task<ApiResponse<ImageResponse?>> GetImage(int id);
+    ApiResponse<List<ImageResponse>> GetImages();
+    ApiResponse<ImageResponse> GetImage(int id);
+    ApiResponse<ImageResponse> AddImage(ImageRequest model);
+    ApiResponse<ImageResponse> UpdateImage(ImageUpdateRequest model);
+    ApiResponse<ImageResponse> DeleteImage(int id);
 }
